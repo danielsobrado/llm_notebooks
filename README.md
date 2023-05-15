@@ -1,8 +1,16 @@
 # LLMs
 
+I tested these steps on WSL2.
+
 ## About formats and conversions
 
-### Convert Open LLama to GGML format
+Language models can be saved and loaded in various formats, here are the most known frameworks:
+
+**PyTorch Model (.pt or .pth)**: This is a common format for models trained using the PyTorch framework. It represents the state_dict (or the "state dictionary"), which is a Python dictionary object that maps each layer in the model to its trainable parameters (weights and biases).
+
+**TensorFlow Checkpoints**: TensorFlow is another popular framework for training machine learning models. A checkpoint file contains the weights of a trained model. Unlike a full model, it doesn't contain any description of the computation that the model performs, it's just the weights. That's useful because often the models can be large and storing the full model in memory can be expensive.
+
+**Hugging Face Transformers**: Hugging Face is a company known for their Transformers library, which provides state-of-the-art general-purpose architectures. They have their own model saving and loading mechanisms, usually leveraging PyTorch or TensorFlow under the hood. You can save a model using the save_pretrained() method and load it using from_pretrained().
 
 Here is a brief overview of the different language model file formats:
 
@@ -15,6 +23,37 @@ Here is a brief overview of the different language model file formats:
 * **Pytorch .pt** is the most common extension for PyTorch language models. It is a binary file that stores the model's parameters and state.
 * **Pytorch .pth** is another common extension for PyTorch language models. It is a text-based file that stores the model's parameters and state.
 * **.bin** file is a binary file that stores the parameters and state of a language model. It is a more efficient way to store a language model than a text-based file, such as a .pth file. This is because a binary file can be compressed, which makes it smaller and faster to load.
+
+### Quantization 
+
+Quantization is a technique for reducing the size and complexity of machine learning models. It works by representing the model's parameters and weights in a lower precision format. This can lead to significant reductions in model size and inference time, without sacrificing much accuracy.
+
+There are two main types of quantization: post-training quantization and quantization aware training.
+
+**Post-training quantization** is the most common type of quantization. It works by converting a trained model to a lower precision format after it has been trained. This can be done using a variety of tools and techniques.
+
+**Quantization aware training** is a newer technique that involves training a model with quantization in mind. This can lead to better accuracy and performance than post-training quantization.
+
+### Convert Open-LLama Checkpoint to quantized GGML format
+
+Download Open LLama:
+```
+git clone https://huggingface.co/openlm-research/open_llama_7b_preview_200bt/
+```
+
+Clone llama.cpp and build it:
+```
+git clone https://github.com/ggerganov/llama.cpp 
+cd llama.cpp
+cmake -B build 
+cmake --build build
+```
+
+Convert it from ```.pth``` to ```.ggml```:
+
+```
+python3 convert-pth-to-ggml.py models/open_llama_7b_preview_200bt/open_llama_7b_preview_200bt_transformers_weights 1
+```
 
 ## LLM notebooks
 Testing local LLMs 
