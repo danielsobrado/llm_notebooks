@@ -50,7 +50,36 @@ There are two main types of quantization: post-training quantization and quantiz
 
 **Quantization aware training** is a newer technique that involves training a model with quantization in mind. This can lead to better accuracy and performance than post-training quantization.
 
-### Convert Open-LLama Checkpoint to quantized GGML format
+### Models available
+
+**Llama**
+
+Llama is a large language model (LLM) released by Meta AI in February 2023. A variety of model sizes were trained ranging from 7 billion to 65 billion parameters. LLaMA's developers reported that the 13 billion parameter model's performance on most NLP benchmarks exceeded that of the much larger GPT-3 (with 175 billion parameters) and that the largest model was competitive with state of the art models such as PaLM and Chinchilla.
+
+**Open Llama**
+
+Open Llama is an open-source reproduction of Meta AI's LLaMA model. The creators of Open Llama have made the permissively licensed model publicly available as a 7B OpenLLaMA model that has been trained with 200 billion tokens.
+
+**Vicuna**
+Vicuna is a delta model for LLaMA. Delta models are small, efficient models that can be used to improve the performance of larger models. Vicuna Delta is trained on a dataset of user-shared conversations collected from ShareGPT, and it has been shown to improve the performance of LLaMA on a variety of NLP tasks, including natural language inference, question answering, and summarization.
+
+Vicuna Delta is available as a pre-trained model from the Hugging Face Hub.
+
+#### Llama vs Open Llama
+
+Llama and Open Llama are both large language models (LLMs) that are trained on a massive dataset of text and code. However, there are some key differences between the two models.
+
+| Feature | Llama | Open Llama |
+|---|---|---|
+| **Availability** | Proprietary | Open-source |
+| **Training data** | Text and code | Text only |
+| **Power** | More powerful | Less powerful |
+| **Cost** | Requires a paid subscription | Free to use |
+
+**Overall, Llama is a more powerful and versatile LLM than Open Llama. However, Open Llama is an open-source model that is available for anyone to use. This makes Open Llama a good choice for developers who want to experiment with LLMs or who want to build their own LLMs.**
+
+
+## Convert Open-LLama Checkpoint to quantized GGML format
 
 Download Open LLama into your models folder:
 ```
