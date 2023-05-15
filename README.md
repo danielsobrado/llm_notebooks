@@ -92,15 +92,21 @@ Test it:
 
 ./build/bin/main -m models/open_llama_7b_preview_200bt_q5_0.ggml --ignore-eos -n 1280 -p "Give me in python the quicksort algorithm" --mlock
 
+![executeGGMLF16](https://github.com/danielsobrado/llm_notebooks/blob/main/images/executeGGMLF16.png)
+
 Quantize it to 4 bits:
 
 ```
 ./build/bin/quantize ../models/open_llama_7b_preview_200bt/open_llama_7b_preview_200bt_transformers_weights/ggml-model-f16.bin ../models/open_llama_7b_preview_200bt_q4_0.ggml q4_0
 ```
 
+![quantizedModel](https://github.com/danielsobrado/llm_notebooks/blob/main/images/quantizedModel.png)
+
 Test it:
 
 ./build/bin/main -m models/open_llama_7b_preview_200bt_q4_0.ggml --ignore-eos -n 1280 -p "Give me in python the quicksort algorithm" --mlock
+
+![quantizeTo4Bits](https://github.com/danielsobrado/llm_notebooks/blob/main/images/quantizeTo4Bits.png)
 
 You'll notice that the inference is much faster and requires less memory.
 
