@@ -86,7 +86,7 @@ Convert it from ```.pth``` to ```.ggml```:
 python3 convert-pth-to-ggml.py ../models/open_llama_7b_preview_200bt/ open_llama_7b_preview_200bt_transformers_weights 1
 ```
 
-![convertToGGML]([Isolated.png](https://github.com/danielsobrado/llm_notebooks/blob/main/images/convertToGGML.png) "Convert To GGML")
+![convertToGGML]([Isolated.png](https://github.com/danielsobrado/llm_notebooks/blob/main/images/convertToGGML.png "Convert To GGML")
 
 Test it:
 
