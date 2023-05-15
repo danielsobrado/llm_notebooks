@@ -1,5 +1,7 @@
 # LLMs
 
+Large Language Models (LLMs) are created to produce writing that resembles that of a person. They get the ability to anticipate the next word in a sentence based on the context of the previous words through training on a massive amount of text data. They are frequently referred to as autoregressive mathematical models for this reason.
+
 Let's start with some concepts:
 
 **Embedding** is just a vector that represents the significance of a word token or a portion of an image. 
