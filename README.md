@@ -1,6 +1,20 @@
 # LLMs
 
-I tested these steps on WSL2.
+Let's start with some concepts:
+
+**Embedding** is just a vector that represents the significance of a word token or a portion of an image. 
+
+**Context** refers to the model's finite window because it can only handle a small portion of text.
+
+A simple plug-in model called **LoRA** for adjusting the main model's "loss".
+
+**loss** is a score that indicates how poor the output was.
+
+Making a low precision version of the model using **quantization** such that it still functions but is now considerably faster and requires less computing.
+
+When you feed its most recent prediction back in, **GPT** can generate long sentences because it is trained on everything and predicts the next word.
+
+Note: I tested these steps on WSL2 - Ubuntu 20.04.
 
 ## About formats and conversions
 
