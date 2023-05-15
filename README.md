@@ -58,7 +58,7 @@ Llama is a large language model (LLM) released by Meta AI in February 2023. A va
 
 **Open Llama**
 
-Open Llama is an open-source reproduction of Meta AI's LLaMA model. The creators of Open Llama have made the permissively licensed model publicly available as a 7B OpenLLaMA model that has been trained with 200 billion tokens.
+[Open Llama](https://github.com/s-JoL/Open-Llama) is an open-source reproduction of Meta AI's LLaMA model. The creators of Open Llama have made the permissively licensed model publicly available as a 7B OpenLLaMA model that has been trained with 200 billion tokens.
 
 **Vicuna**
 Vicuna is a delta model for LLaMA. Delta models are small, efficient models that can be used to improve the performance of larger models. Vicuna Delta is trained on a dataset of user-shared conversations collected from ShareGPT, and it has been shown to improve the performance of LLaMA on a variety of NLP tasks, including natural language inference, question answering, and summarization.
@@ -85,6 +85,8 @@ Convert it from ```.pth``` to ```.ggml```:
 ```
 python3 convert-pth-to-ggml.py ../models/open_llama_7b_preview_200bt/ open_llama_7b_preview_200bt_transformers_weights 1
 ```
+
+![convertToGGML]([Isolated.png](https://github.com/danielsobrado/llm_notebooks/blob/main/images/convertToGGML.png) "Convert To GGML")
 
 Test it:
 
