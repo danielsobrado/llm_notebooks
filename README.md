@@ -65,20 +65,6 @@ Vicuna is a delta model for LLaMA. Delta models are small, efficient models that
 
 Vicuna Delta is available as a pre-trained model from the Hugging Face Hub.
 
-#### Llama vs Open Llama
-
-Llama and Open Llama are both large language models (LLMs) that are trained on a massive dataset of text and code. However, there are some key differences between the two models.
-
-| Feature | Llama | Open Llama |
-|---|---|---|
-| **Availability** | Proprietary | Open-source |
-| **Training data** | Text and code | Text only |
-| **Power** | More powerful | Less powerful |
-| **Cost** | Requires a paid subscription | Free to use |
-
-**Overall, Llama is a more powerful and versatile LLM than Open Llama. However, Open Llama is an open-source model that is available for anyone to use. This makes Open Llama a good choice for developers who want to experiment with LLMs or who want to build their own LLMs.**
-
-
 ## Convert Open-LLama Checkpoint to quantized GGML format
 
 Download Open LLama into your models folder:
