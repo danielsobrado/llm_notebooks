@@ -52,7 +52,7 @@ There are two main types of quantization: post-training quantization and quantiz
 
 ### Convert Open-LLama Checkpoint to quantized GGML format
 
-Download Open LLama:
+Download Open LLama into your models folder:
 ```
 git clone https://huggingface.co/openlm-research/open_llama_7b_preview_200bt/
 ```
@@ -68,8 +68,24 @@ cmake --build build
 Convert it from ```.pth``` to ```.ggml```:
 
 ```
-python3 convert-pth-to-ggml.py models/open_llama_7b_preview_200bt/open_llama_7b_preview_200bt_transformers_weights 1
+python3 convert-pth-to-ggml.py ../models/open_llama_7b_preview_200bt/ open_llama_7b_preview_200bt_transformers_weights 1
 ```
+
+Test it:
+
+./build/bin/main -m models/open_llama_7b_preview_200bt_q5_0.ggml --ignore-eos -n 1280 -p "Give me in python the quicksort algorithm" --mlock
+
+Quantize it to 4 bits:
+
+```
+./build/bin/quantize ../models/open_llama_7b_preview_200bt/open_llama_7b_preview_200bt_transformers_weights/ggml-model-f16.bin ../models/open_llama_7b_preview_200bt_q4_0.ggml q4_0
+```
+
+Test it:
+
+./build/bin/main -m models/open_llama_7b_preview_200bt_q4_0.ggml --ignore-eos -n 1280 -p "Give me in python the quicksort algorithm" --mlock
+
+You'll notice that the inference is much faster and requires less memory.
 
 ## LLM notebooks
 Testing local LLMs 
