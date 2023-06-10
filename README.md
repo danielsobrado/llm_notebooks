@@ -119,7 +119,7 @@ Testing local LLMs
 1. Train Vicuna 7B on a text fragment: [Notebook](https://github.com/danielsobrado/llm_notebooks/blob/main/Notebooks/Train%20Vicuna%207b.ipynb)
 
 ## Concepts:
-1. Dot Product
+1. Dot Product: [Notebook](https://github.com/danielsobrado/llm_notebooks/blob/main/Notebooks/Dot%20Product.ipynb)
 
 ## How to run the examples
 
