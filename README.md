@@ -130,7 +130,25 @@ Folow the steps:
 * Install the packages: `conda install jupyter numpy matplotlib seaborn plotly`
 * Start notebooks: `jupyter notebook --NotebookApp.password="''"  --NotebookApp.token="''"`
  
-
-
 ## Links:
 * GPTQ inference Triton kernel: https://github.com/fpgaminer/GPTQ-triton
+
+# LLM Server
+
+We'll use [oobabooga](https://github.com/oobabooga/text-generation-webui) as server, using the [OpenAI extension](https://github.com/oobabooga/text-generation-webui/tree/main/extensions/openai)
+
+* `python server.py --extensions openai --no-stream`
+
+We'll download a model GGML for CPU or GPTQ for GPU, both quantized:
+[oobabooga1](https://github.com/danielsobrado/llm_notebooks/blob/main/images/LLM_oobabooga.png)
+[oobabooga2](https://github.com/danielsobrado/llm_notebooks/blob/main/images/LLM_oobabooga2.png)
+
+Test that works fine:
+[oobabooga3](https://github.com/danielsobrado/llm_notebooks/blob/main/images/LLM_oobabooga3.png)
+
+And we'll be able to connect from our notebook to the server:
+[oobabooga server](https://github.com/danielsobrado/llm_notebooks/blob/main/images/LLM_oobabooga4.png)
+
+
+
+
