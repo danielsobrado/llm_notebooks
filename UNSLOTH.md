@@ -85,11 +85,19 @@ If you encounter the following error:
 ImportError: cannot import name 'packaging' from 'pkg_resources' (/home/drusniel/mambaforge/envs/unsloth_env/lib/python3.10/site-packages/pkg_resources/__init__.py)
 ```
 
-You can resolve it by installing a specific version of `setuptools` using Mamba:
+You can resolve it by installing a specific version of `setuptools` using Mamba: (version 70 didn't work)
 
 ```
-mamba install setuptools==62.6.0
+mamba install setuptools==69.5.1
 ```
+
+### ImportError: cannot import name 'packaging' from 'pkg_resources'
+
+If you encounter the following error:
+```
+ValueError: Query/Key/Value should all have BMHK or BMK shape.
+```
+
 
 ## Environment Details
 
